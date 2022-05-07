@@ -1,4 +1,4 @@
-from dataclasses import dataclass, asdict
+from dataclasses import asdict, dataclass
 
 
 @dataclass
@@ -50,11 +50,10 @@ class Training:
 
     def show_training_info(self) -> InfoMessage:
         """Вернуть информационное сообщение о выполненной тренировке."""
-        info_message = InfoMessage(type(self).__name__, self.duration,
-                                   self.get_distance(),
-                                   self.get_mean_speed(),
-                                   self.get_spent_calories())
-        return info_message
+        return InfoMessage(type(self).__name__, self.duration,
+                           self.get_distance(), self.get_mean_speed(),
+                           self.get_spent_calories()
+                           )
 
 
 class Running(Training):
@@ -124,15 +123,14 @@ class Swimming(Training):
 
 def read_package(workout_type: str, data: list) -> Training:
     """Прочитать данные полученные от датчиков."""
-    try:
-        training_dict = {
-            'SWM': Swimming,
-            'RUN': Running,
-            'WLK': SportsWalking
-        }
-        return training_dict.get(workout_type)(*data)
-    except TypeError:
-        print('Данный код тренировки отсутсвует')
+    training_dict = {
+        'SWM': Swimming,
+        'RUN': Running,
+        'WLK': SportsWalking
+    }
+    if workout_type not in training_dict.keys():
+        raise ValueError(f'Данный код: "{workout_type}" тренировки отсутсвует')
+    return training_dict.get(workout_type)(*data)
 
 
 def main(training: Training) -> None:
