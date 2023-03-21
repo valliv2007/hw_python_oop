@@ -1,33 +1,30 @@
-# Модуль фитнес-трекера
-### Описание проекта:
-Программный модуль для расчета и отображения информации о прошедшей тренировке по данным от блока датчиков. Виды тренировки: бег, спортивная ходьба, плавание. Программа выводит информацию о пройденной дистанции, средней скорости и потраченных каллориях. Учебный проект на "чистом" Python для обучения ООП
+# Fitness tracker module
+### Description:
+A software module for calculating and displaying information about a workout based on data from a sensor. Types of workouts: running, walking, swimming. The program displays information about the distance covered, average speed, and calories burned. An educational project in "vanilla" Python for learning OOP.
 
-### Технологии:
+### Technologies:
 Python 3.7.9
 
-### Как запустить проект:
-Клонировать репозиторий и перейти в него в командной строке:
+### How to run the project::
+Clone the repository and go to it in the command line:
 ```sh
 git clone git@github.com:valliv2007/hw_python_oop.git
 ```
 ```sh
 cd hw_python_oop
 ```
-Cоздать и активировать виртуальное окружение:
+Create and activate a virtual environment:
 ```sh
 python -m venv venv
 ```
 ```sh
 source venv/bin/activate or source venv/Scripts/activate
 ```
-Установить зависимости из файла requirements.txt:
+Install the dependencies from the requirements.txt file
 ```sh
 pip install -r requirements.txt
 ```
-Запустить файл:
+Run the file:
 ```sh
 python homework.py 
-```
-
-### Над проектом работал
-- Snezhko Ilya 
+``` 
